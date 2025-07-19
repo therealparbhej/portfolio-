@@ -5,9 +5,9 @@ const projects = [
     link: "https://therealparbhej.github.io/MyCalculator/"
   },
   {
-    title: "To-Do List",
-    description: "Simple to-do list to manage daily tasks.",
-    link: "https://yourdomain.com/todo"
+    title: "Quiz-master",
+    description: "A basic Quiz Game built with HTML, CSS, and JS.",
+    link: "https://quiz-masterbyparbhej.netlify.app/"
   },
   {
     title: "Weather App",
