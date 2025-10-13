@@ -3,57 +3,196 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Coding Projects</title>
+  <title>Parbhej Mahruf - Developer Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
 </head>
 <body>
-  <header>
-    <div class="profile-image">
-    <img src="profile.jpg" alt="My Profile Picture" />
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">Parbhej<span>.dev</span></div>
+      <ul class="nav-menu">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
-    <h1>My Coding Projects</h1>
-    <p>Explore the projects I've built with HTML, CSS, JavaScript, and more.</p>
-  </header>
+  </nav>
 
-  <main>
-    <section id="projects-container">
-      <!-- Projects will be loaded here -->
-    </section>
-  </main>
-  <section class="contact-section">
-  <h2>Get In Touch</h2>
-  <p>Let's work together or just say hi. I’d love to hear from you!</p>
-  
-  <div class="contact-container">
-    <!-- Contact Info -->
-    <div class="contact-info">
-      <h3>Contact Information</h3>
-      <p><i class="fas fa-phone"></i> +91 6003647635</p>
-      <p><i class="fas fa-envelope"></i>parbhejmahruf01@gmail.com</p>
-      <p><i class="fas fa-map-marker-alt"></i> Darrang, Assam, India</p>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <h3>Hello, I'm👋</h3>
+        <h1>Parbhej Mahruf</h1>
+        <h2>Full Stack Developer</h2>
+        <p>I create modern, user-friendly websites, apps, and designs that blend creativity with clean, functional code. ✨</p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-secondary">Hire Me</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="image-wrapper">
+          <img src="profile1.png" alt="Parbhej Mahruf" />
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- Contact Form -->
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <input type="text" placeholder="Subject" required />
-      <textarea placeholder="Write your message..." rows="4" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-content">
+        <div class="about-image">
+          <img src="profile2.jpg" alt="About Parbhej" />
+        </div>
+        <div class="about-text">
+          <h3>I'm a Student Developer</h3>
+          <p>I’m a passionate student developer who loves creating digital experiences through clean code and elegant design.
+             I enjoy working with HTML, CSS, JavaScript, and Node.js to bring ideas to life on the website and mobile apps.</p>
+          <p>With 4 years+ of experience in Figma, video editing, and graphic design, I combine creativity and technology 
+             to craft visually appealing and user-friendly experiences.</p>
+          <div class="about-info">
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Darrang, Assam, India</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-envelope"></i>
+              <span>parbhejmahruf01@gmail.com</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-phone"></i>
+              <span>+91 6003647635</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- Social Media Icons -->
-  <div class="social-icons">
-    <a href="https://www.instagram.com/parbhej.mahruf?igsh=cHpvdHVoc3puYjVv" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com/share/16Sgh87boE/" target="_blank"><i class="fab fa-facebook"></i></a>
-    <a href="https://github.com/therealparbhej" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="https://x.com/ParbhejMahruf?t=JAKFY9vlF04I4e6tua1rsw&s=09" target="_blank"><i class="fab fa-twitter"></i></a>
-    <a href="https://youtube.com/@therealparbhej?si=ZOZCWp9CDXFkgjzT" target="_blank"><i class="fab fa-youtube"></i></a>
-  </div>
-</section>
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <div class="container">
+      <h2 class="section-title">My Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <i class="fab fa-html5"></i>
+          <h3>HTML5</h3>
+          <p>Semantic markup and modern HTML practices</p>
+        </div>
+        <div class="skill-card">
+          <i class="fab fa-css3-alt"></i>
+          <h3>CSS3</h3>
+          <p>Responsive design and animations</p>
+        </div>
+        <div class="skill-card">
+          <i class="fab fa-js"></i>
+          <h3>JavaScript</h3>
+          <p>ES6+ and modern JavaScript</p>
+        </div>
+        <div class="skill-card">
+          <i class="fab fa-react"></i>
+          <h3>React</h3>
+          <p>Component-based architecture</p>
+        </div>
+        <div class="skill-card">
+          <i class="fab fa-node"></i>
+          <h3>Node.js</h3>
+          <p>Server-side JavaScript development</p>
+        </div>
+        <div class="skill-card">
+          <i class="fab fa-github"></i>
+          <h3>Git & GitHub</h3>
+          <p>Version control and collaboration</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <h2 class="section-title">My Projects</h2>
+      <div id="projects-container" class="projects-grid">
+        <!-- Projects will be loaded here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="section-subtitle">Let's work together or just say hi. I'd love to hear from you!</p>
+      
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3>Contact Information</h3>
+          <div class="info-item">
+            <i class="fas fa-phone"></i>
+            <div>
+              <h4>Phone</h4>
+              <p>+91 6003647635</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <h4>Email</h4>
+              <p>parbhejmahruf01@gmail.com</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h4>Location</h4>
+              <p>Darrang, Assam, India</p>
+            </div>
+          </div>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/parbhej.mahruf?igsh=cHpvdHVoc3puYjVv" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/share/16Sgh87boE/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://github.com/therealparbhej" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://x.com/ParbhejMahruf?t=JAKFY9vlF04I4e6tua1rsw&s=09" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://youtube.com/@therealparbhej?si=ZOZCWp9CDXFkgjzT" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <form class="contact-form" method="post" action="https://formspree.io/f/mqaygpvv">
+          <div class="form-group">
+            <input type="text" placeholder="Your Name" required />
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Your Email" required />
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="Subject" required />
+          </div>
+          <div class="form-group">
+            <textarea placeholder="Write your message..." rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Parbhej Mahruf. All rights reserved.</p>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
