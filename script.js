@@ -11,9 +11,9 @@ const projects = [
     link: "https://quiz-masterbyparbhej.netlify.app/"
   },
   {
-    title: "Weather App",
-    description: "Fetches real-time weather data using an API.",
-    link: "https://www.google.com/search?q=google+weather&oq=google+weth&gs_lcrp=EgZjaHJvbWUqFAgBEAAYChhGGIACGLEDGMkDGIAEMgYIABBFGDkyFAgBEAAYChhGGIACGLEDGMkDGIAEMgkIAhAAGAoYgAQyCQgDEAAYChiABDIJCAQQABgKGIAEMgwIBRAAGAoYsQMYgAQyDAgGEAAYChixAxiABDIMCAcQABgKGLEDGIAEMgkICBAAGAoYgAQyCQgJEAAYChiABNIBCTE1NzI2ajBqN6gCCLACAfEF3c5JQEEvTVU&sourceid=chrome&ie=UTF-8"
+    title: "Image → PDF Converter",
+    description: "Converts images to PDF format using a simple interface.",
+    link: "https://pixtopdfconverter.netlify.app/"
   }
 ];
 
