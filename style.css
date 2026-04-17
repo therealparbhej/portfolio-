@@ -336,10 +336,19 @@ body {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
-.skill-card i {
+.skill-card i,
+.skill-card .skill-icon {
   font-size: 3.5rem;
-  color: #f093fb;
+  width: 3.5rem;
+  height: 3.5rem;
   margin-bottom: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  object-fit: contain;
+}
+
+.skill-card i {
+  color: #f093fb;
 }
 
 .skill-card h3 {
@@ -531,6 +540,41 @@ body {
   padding: 30px 0;
   text-align: center;
   color: rgba(255, 255, 255, 0.8);
+}
+
+/* Utility Classes */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.form-status {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  display: none;
+}
+
+.form-status.success {
+  display: block;
+  background: rgba(76, 175, 80, 0.2);
+  color: #fff;
+  border: 1px solid #4CAF50;
+}
+
+.form-status.error {
+  display: block;
+  background: rgba(244, 67, 54, 0.2);
+  color: #fff;
+  border: 1px solid #f44336;
 }
 
 /* Responsive Design */
