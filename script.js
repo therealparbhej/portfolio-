@@ -53,26 +53,53 @@ navLinks.forEach(link => {
   });
 });
 
-// Smooth Scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  });
-});
+// Smooth Scroll for older browsers or specific offsets (Optional)
+// Removed JS smooth scroll as CSS handles it now.
 
-// Form Submission
+
+// Form Submission with AJAX
 const contactForm = document.querySelector('.contact-form');
-contactForm.addEventListener('submit', (e) => {
+const formStatus = document.createElement('div');
+formStatus.className = 'form-status';
+contactForm.appendChild(formStatus);
+
+contactForm.addEventListener('submit', async (e) => {
   e.preventDefault();
-  alert('Thank you for your message! I will get back to you soon.');
-  contactForm.reset();
+  const formData = new FormData(contactForm);
+  const submitBtn = contactForm.querySelector('button[type="submit"]');
+  const originalBtnText = submitBtn.textContent;
+  
+  // Loading state
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending...';
+  formStatus.style.display = 'none';
+
+  try {
+    const response = await fetch(contactForm.action, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      formStatus.textContent = 'Thank you! Your message has been sent.';
+      formStatus.className = 'form-status success';
+      contactForm.reset();
+    } else {
+      const data = await response.json();
+      formStatus.textContent = data.errors ? data.errors.map(error => error.message).join(', ') : 'Oops! There was a problem submitting your form';
+      formStatus.className = 'form-status error';
+    }
+  } catch (error) {
+    formStatus.textContent = 'Oops! Connection error. Please try again later.';
+    formStatus.className = 'form-status error';
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = originalBtnText;
+    formStatus.style.display = 'block';
+  }
 });
 
 // Scroll Animation
@@ -98,15 +125,27 @@ document.querySelectorAll('section').forEach(section => {
   observer.observe(section);
 });
 
-// Active Navigation on Scroll
+// Consolidated Scroll Listener
+const navbar = document.querySelector('.navbar');
+const sections = document.querySelectorAll('section');
+
 window.addEventListener('scroll', () => {
-  let current = '';
-  const sections = document.querySelectorAll('section');
+  const scrollY = window.pageYOffset;
   
+  // 1. Sticky Navbar background
+  if (scrollY > 50) {
+    navbar.style.background = 'rgba(58, 41, 79, 0.98)';
+    navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+  } else {
+    navbar.style.background = 'rgba(58, 41, 79, 0.95)';
+    navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+  }
+
+  // 2. Active Nav Link
+  let current = '';
   sections.forEach(section => {
     const sectionTop = section.offsetTop;
-    const sectionHeight = section.clientHeight;
-    if (scrollY >= sectionTop - 100) {
+    if (scrollY >= sectionTop - 150) {
       current = section.getAttribute('id');
     }
   });
@@ -117,16 +156,4 @@ window.addEventListener('scroll', () => {
       link.classList.add('active');
     }
   });
-});
-
-// Navbar background on scroll
-window.addEventListener('scroll', () => {
-  const navbar = document.querySelector('.navbar');
-  if (window.scrollY > 50) {
-    navbar.style.background = 'rgba(58, 41, 79, 0.98)';
-    navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
-  } else {
-    navbar.style.background = 'rgba(58, 41, 79, 0.95)';
-    navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-  }
-});
+}, { passive: true });
